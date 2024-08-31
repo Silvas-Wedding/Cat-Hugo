@@ -752,7 +752,6 @@ border-radius: 25px;
   height: 400px;
   margin-bottom: 30px;
 border-radius: 25px;
-filter: grayscale(35%);
 }
 .work .view, .product .view {
   width: 100%;
