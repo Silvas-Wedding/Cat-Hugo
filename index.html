@@ -187,7 +187,10 @@
 
 <a href="https://www.google.pt/maps/place/Casa+Sacoto/@39.0553284,-9.1447091,651m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd18d311bee6fecf:0x4fcb9b54e29c6481!8m2!3d39.0553243!4d-9.1421342!16s%2Fg%2F11jlx5kgwf?entry=ttu" target="_blank"><b>Casa Sacoto</b><i class=" icon-map-pin"></i></a>
 
-<br>Existe lugar de estacionamento para todos. Deixamos <u>aqui</u> algumas sugest&otilde;es de alojamento.</p>
+<br>Existe lugar de estacionamento para todos. Deixamos 
+<a href="#" class="open-modal-link" id="openModalLink">aqui</a>
+
+algumas sugest&otilde;es de alojamento.</p>
 						</div><!-- d -->
 					</div><!-- e -->
                     
@@ -212,7 +215,7 @@
 								<span><i class=" icon-pencil"></i></span>
 							</div>
 							<h3>RSVP</h3>
-							<p>Para podermos preparar melhor este dia, precisamos que confirmes a tua presen&ccedil;a at&eacute;: <br><b>31 dezembro 2024</b>. </p>
+							<p>Para podermos preparar melhor este dia, precisamos que confirmes a tua presen&ccedil;a at&eacute;<br><b>31 dezembro 2024</b>. </p>
 						</div>
 					</div>
                     
@@ -224,14 +227,36 @@
 
 
 
- 
+
+
+
+
+
+ <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sugest&otilde;es de alojamento:</h2>
+            <p>
+<a href="https://www.dolcecamporeal.com/" target="_blank">Dolce Campo Real </a><br>
+<a href="https://www.airbnb.pt/rooms/39383276" target="_blank">Casa do Chafariz </a><br>
+<a href="https://https://www.airbnb.pt/rooms/39385620/" target="_blank">Casa do Largo </a><br>
+<a href="https://https://www.airbnb.com/h/vigia8" target="_blank">Casa em Matac&atilde;es </a><br>
+<a href="https://www.airbnb.pt/rooms/808064487115325867" target="_blank">Quinta da Estima </a><br>
+
+
+</p>
+        </div>
+    </div>
 
 
 
 
 
 
-				
+
+
+
+			
 
 
 	
@@ -252,6 +277,31 @@
   </div> <!-- 1 -->
 
 	
+
+<script>
+        // Obtém os elementos do DOM
+        var modal = document.getElementById("myModal");
+        var link = document.getElementById("openModalLink");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Abre o modal quando o usuário clica no link
+        link.onclick = function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+            modal.style.display = "block";
+        }
+
+        // Fecha o modal quando o usuário clica no botão de fechar
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal se o usuário clicar fora do conteúdo do modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 
 
