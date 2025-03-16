@@ -13,13 +13,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-  <!-- 
-	<f
-	 -->
+  
 
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
+
+
 
 	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
@@ -27,6 +27,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 	
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
 
 
 	<!-- Animate.css -->
@@ -40,6 +45,8 @@
 	<link rel="stylesheet" href="css/flexslider.css">
 
 	<link rel="stylesheet" href="css/style.css">
+
+	
 
 
 	<!-- Modernizr JS -->
@@ -56,8 +63,9 @@
 
 <div class="slider_CH">
 <div class="slides_CH">
+
             <div class="slide_CH">
-                <img src="images/aux1.jpg" alt="Imagem 1">
+              <img src="images/aux1.jpg" alt="Imagem 1">
             </div>
             <div class="slide_CH">
                 <img src="images/aux2.jpg" alt="Imagem 2">
@@ -79,6 +87,20 @@
 
 
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -93,11 +115,88 @@
 
 
 <br>
- 
-<div style="padding: 20px;">
-	<p style="text-align: justify;">Imagina um casamento acolhedor e intimista, realizado num espa&ccedil;o que se assemelha em tudo &agrave; casa que idealizamos ter, onde cada detalhe minimalista ser&aacute cuidadosamente pensado para refletir a simplicidade e a beleza do nosso amor. Rodeados pelos nossos amigos e familiares mais pr&oacute;ximos, celebramos este momento especial num ambiente caloroso e familiar, onde a eleg&acirc;ncia sublime e discreta do cen&aacute;rio real&ccedil;a o que realmente mais importa: o amor e o carinho que nos unem a todos. Convidamos-te a fazer parte de um dia para compartilhar sorrisos, hist&oacute;rias e a felicidade de estarmos juntos, celebrando o amor de forma aut&ecirc;ntica e com muita alegria!</p>
 
-					</div>             
+    
+
+
+
+
+
+
+
+
+
+
+ <div id="countdown"></div>
+    
+    <script>
+
+
+function startCountdown(targetDate) {
+    const countdownElement = document.getElementById('countdown');
+    
+    function updateCountdown() {
+        const now = new Date();
+        const timeDifference = targetDate - now;
+        
+        if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            
+            countdownElement.innerHTML = `
+                <div class="countdown-box">${days}<span class="countdown-label">dias</span></div>
+                <div class="countdown-box">${hours}<span class="countdown-label">horas</span></div>
+                <div class="countdown-box">${minutes}<span class="countdown-label">minutos</span></div>
+                <div class="countdown-box">${seconds}<span class="countdown-label">segundos</span></div>
+            `;
+            setTimeout(updateCountdown, 1000);
+        } else {
+            countdownElement.innerHTML = "<h2>Chegou o dia!</h2>";
+        }
+    }
+    
+    updateCountdown();
+}
+
+// Criar a data no horário correto de Lisboa (sem UTC)
+const targetDate = new Date(2025, 4, 17, 16, 0, 0); // 17 de maio de 2025 às 15:00 no fuso local
+startCountdown(targetDate);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="padding: 20px;">
+
+
+	<p style="text-align: justify;">Imaginem um casamento acolhedor e intimista, realizado num espa&ccedil;o que se assemelha em tudo &agrave; casa que idealizamos ter, onde cada detalhe minimalista ser&aacute; cuidadosamente pensado para refletir a simplicidade e a beleza do nosso amor. Rodeados pelos nossos amigos e familiares mais pr&oacute;ximos, celebramos este momento especial num ambiente caloroso e familiar, onde a eleg&acirc;ncia sublime e discreta do cen&aacute;rio real&ccedil;a o que realmente mais importa: o amor e o carinho que nos unem a todos.  
+Enviamos assim este <b>convite</b> para que possam fazer parte de um dia de partilha de sorrisos, hist&oacute;rias e de enorme felicidade por estarmos todos juntos, a celebrar o amor de forma aut&ecirc;ntica e com muita alegria!</p>
+
+					</div>   
+
+
+
+
+          
           
                     
 				</div><!-- c -->
@@ -108,11 +207,129 @@
 <!-- ok ate aqui -->
 
 
+
+			
+		
+
+
 <footer>
 <div id="footer">
 </div>
 </footer>
 
+
+
+
+
+
+        <div id="fh5co-services-section"><!-- a -->
+			<div class="container"><!-- b -->
+				<div class="row"><!-- c -->
+					<div class="col-md-6 col-md-offset-3 text-center animate-box ">
+										</div>
+				</div><!-- c -->
+				<div class="row">
+					<div class="col-md-4 text-center animate-box"><!-- e -->
+						<div class="services"><!-- d -->
+							<div class="icon">
+								<span><i class=" icon-streetsign"></i></span>  
+							</div>
+							<h3>Local do evento, Hora de chegada e alojamento</h3>
+							<p>A cerim&oacute;nia, jantar e festa ser&atilde;o na
+<a href="https://www.google.pt/maps/place/Casa+Sacoto/@39.0553284,-9.1447091,651m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd18d311bee6fecf:0x4fcb9b54e29c6481!8m2!3d39.0553243!4d-9.1421342!16s%2Fg%2F11jlx5kgwf?entry=ttu" target="_blank"><b>Casa Sacoto </b><i class=" icon-map-pin">.</i></a>
+
+Convidamos todos os nossos familiares e amigos a chegar no dia <b>17 de maio de 2025</b>, pelas <b>15h15</b>. <br>
+
+<br>Existe lugar de estacionamento para todos. Deixamos 
+<a href="#" class="open-modal-link" id="openModalLink1">aqui</a>
+
+algumas sugest&otilde;es de alojamento, caso necess&aacute;rio.</p>
+						</div><!-- d -->
+					</div><!-- e -->
+                    
+                    
+                    
+			
+                    
+                    
+                    
+                    
+		
+
+
+
+	<div class="col-md-4 text-center animate-box">
+						<div class="services">
+							<div class="icon">
+				
+		
+<span><i class="fas fa-tshirt"></span></i>
+					</div>
+							<h3>Dress code</h3>
+							<p>Queremos que todos se sintam bem e confort&aacute;veis neste dia, por isso sugerimos um estilo <b>semi-formal</b>.<br>
+
+Para os homens recomendamos um conjunto de cal&ccedil;a, camisa e blazer. O uso de gravata &eacute; desaconselhado. Para as senhoras, um vestido ou macac&atilde;o e a todos relembramos que existe muita &aacute;rea verde, pelo que sugerimos o uso de sapatos adequados (ou segundo par alternativo).<br>
+
+Atendendo &agrave; localiza&ccedil;&atilde;o da Casa, refor&ccedil;amos que pode fazer algum frio a partir do final da tarde.</p>
+
+						</div>
+					</div>
+
+
+
+
+
+	<div class="col-md-4 text-center animate-box">
+						<div class="services">
+							<div class="icon">
+								<span><i class="bi bi-airplane"></i></span>
+							</div>
+							<h3>Lua de mel</h3>
+							<p>A presen&ccedil;a de todos os nossos familiares e amigos &eacute; inestim&aacute;vel e o nosso maior desejo &eacute; que possamos viver todos juntos um dia incrivelmente feliz. Caso queiram ainda presentear-nos de alguma forma, o nosso maior sonho ser&aacute; conseguir ir de lua de mel.
+<a href="#" class="open-modal-link" id="openModalLink2">Espreitem mais aqui!</a></p>
+
+						</div>
+					</div>
+
+
+
+	<div class="col-md-4 text-center animate-box">
+						<div class="services">
+							<div class="icon">
+								<span><i class="bi bi-camera"></i></span>
+							</div>
+							<h3>Partilhem as vossas fotos!</h3>
+							<p>Gostariam de partilhar as vossas fotos ou v&iacute;deos connosco? Gostar&iacute;amos muito de os receber! Cliquem <a href="https://weduploader.com/upload/an3jprjKVWgKQULt" target="_blank">aqui</a> para enviar ou podem l&ecirc;r o QR-Code. Obrigado!
+<img src="images/weduploader-qr-code.png" />
+<p style="font-size: 12px;"><strong>Nota de privacidade:</strong> as fotos enviadas ficar&atilde;o numa pasta Google Drive e apenas ser&atilde;o vistas pelos noivos.</p>
+
+</p>
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+                    
+				</div><!-- c -->
+			</div><!-- b -->
+		</div><!-- a -->
+
+
+
+<footer>
+<div id="footer">
+
+
+</div>
+</footer>
 
 
 
@@ -153,117 +370,9 @@
 				</div>
 
 </div>
-			
-		
-
-
-<footer>
-<div id="footer">
-</div>
-</footer>
 
 
 
-
-
-
-        <div id="fh5co-services-section"><!-- a -->
-			<div class="container"><!-- b -->
-				<div class="row"><!-- c -->
-					<div class="col-md-6 col-md-offset-3 text-center animate-box ">
-										</div>
-				</div><!-- c -->
-				<div class="row">
-					<div class="col-md-4 text-center animate-box"><!-- e -->
-						<div class="services"><!-- d -->
-							<div class="icon">
-								<span><i class=" icon-streetsign"></i></span>  
-							</div>
-							<h3>Local do evento e alojamento</h3>
-							<p>A cerim&oacute;nia, jantar e festa ser&atilde;o na
-<a href="https://www.google.pt/maps/place/Casa+Sacoto/@39.0553284,-9.1447091,651m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd18d311bee6fecf:0x4fcb9b54e29c6481!8m2!3d39.0553243!4d-9.1421342!16s%2Fg%2F11jlx5kgwf?entry=ttu" target="_blank"><b>Casa Sacoto </b><i class=" icon-map-pin">.</i></a>
-
-<br>Existe lugar de estacionamento para todos. Deixamos 
-<a href="#" class="open-modal-link" id="openModalLink1">aqui</a>
-
-algumas sugest&otilde;es de alojamento, caso necessites.</p>
-						</div><!-- d -->
-					</div><!-- e -->
-                    
-                    
-                    
-					<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<div class="icon">
-								<span><i class=" icon-clock"></i></span>
-							</div>
-							<h3>Hora de chegada</h3>
-							<p>Convidamos-te a chegar no dia <b>17 de maio de 2025</b>, pelas <b>15h00</b>. N&atilde;o te atrases! N&atilde;o queremos que percas nada!<br>
-						</div>
-					</div>
-                    
-                    
-                    
-                    
-					<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<div class="icon">
-								<span><i class=" icon-pencil"></i></span>
-							</div>
-							<h3>RSVP</h3>
-							<p>Para podermos preparar melhor este dia, precisamos, por favor, que confirmes a tua presen&ccedil;a at&eacute; ao dia <br><b>31 de dezembro de 2024</b>. </p>
-						</div>
-					</div>
-                    
-
-
-
-
-	<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<div class="icon">
-				
-		
-<span><i class="fas fa-tshirt"></span></i>
-					</div>
-							<h3>Dress code</h3>
-							<p>Queremos que todos se sintam bem e confort&#225;veis neste dia, por isso sugerimos um estilo <b>semi-formal</b>. 
-<br>Para os homens recomendamos um conjunto de cal&#231;a, camisa e blazer. N&#227;o &#233; obrigat&#243;rio o uso de gravata. Para as senhoras, um vestido ou macac&#227;o e um pequeno salto. <br>Relembramos que existe muita &#225;rea verde e que pode fazer algum frio &#224; noite.  </p>
-
-						</div>
-					</div>
-
-
-
-
-
-	<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<div class="icon">
-								<span><i class="bi bi-airplane"></i></span>
-							</div>
-							<h3>Lua de mel</h3>
-							<p>A presen&ccedil;a de todos os nossos familiares e amigos &eacute; inestim&aacute;vel e o nosso maior desejo &eacute; que possamos viver todos juntos um dia incrivelmente feliz. Caso queiram ainda presentear-nos de alguma forma, o nosso maior sonho ser&aacute; conseguir ir de lua de mel.
-<a href="#" class="open-modal-link" id="openModalLink2">Espreitem mais aqui!</a></p>
-
-						</div>
-					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-                    
-				</div><!-- c -->
-			</div><!-- b -->
-		</div><!-- a -->
 
 
 
@@ -280,16 +389,26 @@ algumas sugest&otilde;es de alojamento, caso necessites.</p>
 
 
 
-  
+
+
+
+
+
+
 
 
 
 
 <br>
 <div class="container_h">
-<p style="text-align: center;">Cat & Hugo</p> 
+
+
+<p class="handwriting-text2" style="text-align: center;">Catarina & Hugo</p>
+
+
+
       <div class="line_H"></div>
-<p style="text-align: center;">2025.05.17</p> 
+<p style="text-align: center;">17 de maio de 2025</p> 
 
 </div>
 
@@ -346,7 +465,19 @@ algumas sugest&otilde;es de alojamento, caso necessites.</p>
         <div class="modal-content">
             <span class="close2">&times;</span>
             <h2>Lua de mel</h2>
-            <p>
+            
+
+
+
+        <img src="images/Picture1.png" alt="Imagem de fundo" class="modal-img">
+
+    
+
+
+
+
+
+<p>
 Estamos a planear uma viagem de lua de mel ao <b>Jap&atilde;o!</b> Um destino que sempre sonh&aacute;mos conhecer pela sua cultura rica e &uacute;nica, gastronomia inigual&aacute;vel e paisagens naturais deslumbrantes.</p>
 <div class="small-break"></div>
 
@@ -357,21 +488,8 @@ Estamos a planear uma viagem de lua de mel ao <b>Jap&atilde;o!</b> Um destino qu
 <p>Obrigado!</p>
 <p>Catarina e Hugo</p>
 <br><br>
-<p>(Podem usar os nossos mbway ou o IBAN: PT50 0193 0000 1050 0282 9251 0)</p>
+<p>Podem usar os nossos mbway ou os IBAN: PT50 0193 0000 1050 0282 9251 0 (Catarina) ou PT50 0023 0000 4550 1912 2649 4 (Hugo) </p>
 <br>
-
-
-	<div class="row">
-					<div class="col-md-4 text-center animate-box">
-						<div class="work" style="background-image:  url(images/japan.jpg);"></a>
-						</div>
-					</div>   
-</div>
-
-
-</p>
-        </div>
-    </div>
 
 
 
