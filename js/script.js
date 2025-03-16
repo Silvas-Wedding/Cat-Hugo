@@ -6,7 +6,11 @@ const dots = document.querySelectorAll('.dot');
 // Atualiza o slider para o slide atual
 function updateSlider() {
     const newTransformValue = `translateX(-${currentSlide * 100}%)`;
+
     document.querySelector('.slides_CH').style.transform = newTransformValue;
+
+
+
     updateDots();
 }
 
