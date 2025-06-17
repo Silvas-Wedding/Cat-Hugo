@@ -58,6 +58,95 @@
 
 	</head>
 	<body>
+
+
+
+
+
+ <audio id="player" autoplay></audio>
+<script>
+        const playlist = [
+            '/musicas/musica1.mp3',
+            '/musicas/musica2.mp3',
+            '/musicas/musica3.mp3',
+            '/musicas/musica4.mp3',
+            '/musicas/musica5.mp3',
+            '/musicas/musica6.mp3',
+            '/musicas/musica7.mp3',
+            '/musicas/musica8.mp3
+
+
+        ];
+
+         const player = document.getElementById('player');
+        let index = 0;
+
+        // Duração do fade em milissegundos
+        const fadeDuration = 2000; // 2 segundos de fade
+        let fadeInterval;
+
+        function fadeOut(callback) {
+            clearInterval(fadeInterval);
+            fadeInterval = setInterval(() => {
+                if (player.volume > 0.05) {
+                    player.volume -= 0.05;
+                } else {
+                    player.volume = 0;
+                    clearInterval(fadeInterval);
+                    callback(); // Trocar de música quando o fade out acabar
+                }
+            }, fadeDuration / 20);
+        }
+
+        function fadeIn() {
+            clearInterval(fadeInterval);
+            player.volume = 0;
+            fadeInterval = setInterval(() => {
+                if (player.volume < 0.95) {
+                    player.volume += 0.05;
+                } else {
+                    player.volume = 1;
+                    clearInterval(fadeInterval);
+                }
+            }, fadeDuration / 20);
+        }
+
+        function playNext() {
+            player.src = playlist[index];
+            player.load();
+
+            const randomStart = Math.floor(Math.random() * 120);
+
+            player.onloadedmetadata = () => {
+                player.currentTime = Math.min(randomStart, player.duration - 1);
+                player.play();
+                fadeIn();
+            };
+
+            index = (index + 1) % playlist.length;
+        }
+
+        // Primeira música
+        playNext();
+
+        // Trocar de música a cada 15 segundos com fade out antes
+        setInterval(() => {
+            fadeOut(playNext);
+        }, 15000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
