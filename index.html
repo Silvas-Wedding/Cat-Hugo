@@ -63,84 +63,6 @@
 
 
 
- <audio id="player" autoplay></audio>
-<script>
-        const playlist = [
-            '/musicas/musica1.mp3',
-            '/musicas/musica2.mp3',
-            '/musicas/musica3.mp3',
-            '/musicas/musica4.mp3',
-            '/musicas/musica5.mp3',
-            '/musicas/musica6.mp3',
-            '/musicas/musica7.mp3',
-            '/musicas/musica8.mp3
-
-
-        ];
-
-         const player = document.getElementById('player');
-        let index = 0;
-
-        // Duração do fade em milissegundos
-        const fadeDuration = 2000; // 2 segundos de fade
-        let fadeInterval;
-
-        function fadeOut(callback) {
-            clearInterval(fadeInterval);
-            fadeInterval = setInterval(() => {
-                if (player.volume > 0.05) {
-                    player.volume -= 0.05;
-                } else {
-                    player.volume = 0;
-                    clearInterval(fadeInterval);
-                    callback(); // Trocar de música quando o fade out acabar
-                }
-            }, fadeDuration / 20);
-        }
-
-        function fadeIn() {
-            clearInterval(fadeInterval);
-            player.volume = 0;
-            fadeInterval = setInterval(() => {
-                if (player.volume < 0.95) {
-                    player.volume += 0.05;
-                } else {
-                    player.volume = 1;
-                    clearInterval(fadeInterval);
-                }
-            }, fadeDuration / 20);
-        }
-
-        function playNext() {
-            player.src = playlist[index];
-            player.load();
-
-            const randomStart = Math.floor(Math.random() * 120);
-
-            player.onloadedmetadata = () => {
-                player.currentTime = Math.min(randomStart, player.duration - 1);
-                player.play();
-                fadeIn();
-            };
-
-            index = (index + 1) % playlist.length;
-        }
-
-        // Primeira música
-        playNext();
-
-        // Trocar de música a cada 15 segundos com fade out antes
-        setInterval(() => {
-            fadeOut(playNext);
-        }, 15000);
-    </script>
-
-
-
-
-
-
-
 
 
 
@@ -216,65 +138,15 @@
 
 
 
- <div id="countdown"></div>
-    
-    <script>
+<div style="padding: 20px;" size="8">
 
 
-function startCountdown(targetDate) {
-    const countdownElement = document.getElementById('countdown');
-    
-    function updateCountdown() {
-        const now = new Date();
-        const timeDifference = targetDate - now;
-        
-        if (timeDifference > 0) {
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-            
-            countdownElement.innerHTML = `
-                <div class="countdown-box">${days}<span class="countdown-label">dias</span></div>
-                <div class="countdown-box">${hours}<span class="countdown-label">horas</span></div>
-                <div class="countdown-box">${minutes}<span class="countdown-label">minutos</span></div>
-                <div class="countdown-box">${seconds}<span class="countdown-label">segundos</span></div>
-            `;
-            setTimeout(updateCountdown, 1000);
-        } else {
-
-
- // Comparando apenas a data (sem a hora)
-            const targetDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-            const currentDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-            if (currentDay.getTime() === targetDay.getTime()) {
-                countdownElement.innerHTML = "<h2>Have fun!!</h2>";
-            } else {
-                countdownElement.innerHTML = "<h2>Obrigado a todos pela vossa presen&ccedil;a!  &#10084;</h2>";
-            }
+	<p style="text-align: center;"><b>Agradecemos pela vossa presen&ccedil;a! &#x2764;</b></p>
 
 
 
 
-        }
-    }
-    
-    updateCountdown();
-}
-
-// Criar a data no horário correto de Lisboa (sem UTC)
-const targetDate = new Date(2025, 4, 17, 15, 15, 0); // 17 de maio de 2025 às 15:15 no fuso local
-startCountdown(targetDate);
-
-</script>
-
-
-
-
-
-
-
+</div>   
 
 
 
@@ -328,27 +200,14 @@ Enviamos assim este <b>convite</b> para que possam fazer parte de um dia de part
         <div id="fh5co-services-section"><!-- a -->
 			<div class="container"><!-- b -->
 				<div class="row"><!-- c -->
-					<div class="col-md-6 col-md-offset-3 text-center animate-box ">
+					
+<div class="col-md-6 col-md-offset-3 text-center animate-box ">
 										</div>
 				</div><!-- c -->
+
+
+
 				<div class="row">
-					<div class="col-md-4 text-center animate-box"><!-- e -->
-						<div class="services"><!-- d -->
-							<div class="icon">
-								<span><i class=" icon-streetsign"></i></span>  
-							</div>
-							<h3>Local do evento, Hora de chegada e alojamento</h3>
-							<p>A cerim&oacute;nia, jantar e festa ser&atilde;o na
-<a href="https://www.google.pt/maps/place/Casa+Sacoto/@39.0553284,-9.1447091,651m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd18d311bee6fecf:0x4fcb9b54e29c6481!8m2!3d39.0553243!4d-9.1421342!16s%2Fg%2F11jlx5kgwf?entry=ttu" target="_blank"><b>Casa Sacoto </b><i class=" icon-map-pin">.</i></a>
-
-Convidamos todos os nossos familiares e amigos a chegar no dia <b>17 de maio de 2025</b>, pelas <b>15h15</b>. <br>
-
-<br>Existe lugar de estacionamento para todos. Deixamos 
-<a href="#" class="open-modal-link" id="openModalLink1">aqui</a>
-
-algumas sugest&otilde;es de alojamento, caso necess&aacute;rio.</p>
-						</div><!-- d -->
-					</div><!-- e -->
                     
                     
                     
@@ -360,23 +219,6 @@ algumas sugest&otilde;es de alojamento, caso necess&aacute;rio.</p>
 		
 
 
-
-	<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<div class="icon">
-				
-		
-<span><i class="fas fa-tshirt"></span></i>
-					</div>
-							<h3>Dress code</h3>
-							<p>Queremos que todos se sintam bem e confort&aacute;veis neste dia, por isso sugerimos um estilo <b>semi-formal</b>.<br>
-
-Para os homens recomendamos um conjunto de cal&ccedil;a, camisa e blazer. O uso de gravata &eacute; desaconselhado. Para as senhoras, um vestido ou macac&atilde;o e a todos relembramos que existe muita &aacute;rea verde, pelo que sugerimos o uso de sapatos adequados (ou segundo par alternativo).<br>
-
-Atendendo &agrave; localiza&ccedil;&atilde;o da Casa, refor&ccedil;amos que pode fazer algum frio a partir do final da tarde.</p>
-
-						</div>
-					</div>
 
 
 
@@ -402,8 +244,7 @@ Atendendo &agrave; localiza&ccedil;&atilde;o da Casa, refor&ccedil;amos que pode
 								<span><i class="bi bi-camera"></i></span>
 							</div>
 							<h3>Partilhem as vossas fotos!</h3>
-							<p>Gostariam de partilhar as vossas fotos ou v&iacute;deos connosco? Gostar&iacute;amos muito de os receber! Cliquem <a href="https://weduploader.com/upload/an3jprjKVWgKQULt" target="_blank">aqui</a> para enviar ou podem l&ecirc;r o QR-Code. Obrigado!
-<img src="images/weduploader-qr-code.png" />
+							<p>Gostariam de partilhar as vossas fotos ou v&iacute;deos connosco? Gostar&iacute;amos muito de os receber! Cliquem <a href="https://weduploader.com/upload/an3jprjKVWgKQULt" target="_blank">aqui</a> para enviar. Obrigado! <br>
 <p style="font-size: 12px;"><strong>Nota de privacidade:</strong> as fotos enviadas ficar&atilde;o numa pasta Google Drive e apenas ser&atilde;o vistas pelos noivos.</p>
 
 </p>
@@ -413,6 +254,22 @@ Atendendo &agrave; localiza&ccedil;&atilde;o da Casa, refor&ccedil;amos que pode
 
 
 
+
+
+
+	<div class="col-md-4 text-center animate-box">
+						<div class="services">
+							<div class="icon">
+								<span><i class="bi bi-journal-medical"></i></span>
+							</div>
+							<h3>Registo fotogr&aacute;fico</h3>
+							<p>Podem aceder <a href="https://anapaixaofotografia.pixieset.com/ocasamentodacatarinaedohugo/" target="_blank">aqui</a> ao &aacute;lbum com a reportagem fotogr&aacute;fica e videogr&aacute;fica do nosso dia! 
+
+
+</p>
+
+						</div>
+					</div>
 
 
 
